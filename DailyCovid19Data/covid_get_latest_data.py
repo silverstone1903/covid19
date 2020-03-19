@@ -2,6 +2,11 @@ import pandas as pd
 import wget
 import os
 
+lenght = pd.read_csv('covid_19_clean_complete.csv').shape[0]
+max_date = pd.read_csv('covid_19_clean_complete.csv', parse_dates=["Date"])["Date"].max()
+print("Latest data has {} rows. ".format(lenght))
+print("The latest date is: {}".format(str(max_date)[:11]))
+
 print("Getting the latest data...")
 urls = ['https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Confirmed.csv', 
         'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Deaths.csv', 
@@ -15,7 +20,7 @@ recv_df = pd.read_csv('time_series_19-covid-Recovered.csv')
 
 print("\n")
 dates = conf_df.columns[4:]
-print("Last Date: ", dates[-1])
+print("Updated Date: ", dates[-1])
 conf_df_long = conf_df.melt(id_vars=['Province/State', 'Country/Region', 'Lat', 'Long'], 
                             value_vars=dates, var_name='Date', value_name='Confirmed')
 
