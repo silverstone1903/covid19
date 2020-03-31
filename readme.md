@@ -2,3 +2,6 @@
 
 Update (2020-03-25): New data [source](https://pomber.github.io/covid19/timeseries.json) has been added. 
 [DailyCovid19Data/get_latest_data_json.py](https://github.com/silverstone1903/covid19/blob/master/DailyCovid19Data/get_latest_data_json.py)
+
+
+[Daily Table](https://silverstone1903.github.io/files/covid19/covid19-daily-table.html)
